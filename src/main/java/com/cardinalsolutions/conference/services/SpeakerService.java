@@ -35,6 +35,7 @@ public class SpeakerService {
 		speaker.setLastName("Morgan");
 		speakers.add(speaker);
 		
+		System.out.println("In call to speakers");
 		return speakers;
 	}
 }
