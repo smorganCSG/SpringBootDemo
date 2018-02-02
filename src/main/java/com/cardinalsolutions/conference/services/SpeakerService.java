@@ -30,6 +30,11 @@ public class SpeakerService {
 		speaker.setLastName("Morgan");
 		speakers.add(speaker);
 		
+		speaker = new Speaker();
+		speaker.setFirstName("Aaron");
+		speaker.setLastName("Morgan");
+		speakers.add(speaker);
+		
 		return speakers;
 	}
 }
