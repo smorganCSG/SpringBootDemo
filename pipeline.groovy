@@ -16,6 +16,10 @@ node('maven') {
   def version    = getVersionFromPom("pom.xml")
   def newTag = "TestReady-${version}:${BUILD_NUMBER}"
  
+  stage('Flyway Migration') {
+  	flywayrunner commandLineArgs: '', credentialsId: 'SampleDB', flywayCommand: 'baseline', installationName: 'flyway', locations: 'classpath:db/migrations', url: 'jdbc:mysql://mysql.srm-conference-services.svc:3306/sampledb'
+  }
+  
   stage('Build war') {
     echo "Building version ${version}"
     sh "${mvnCmd} clean package -DskipTests"

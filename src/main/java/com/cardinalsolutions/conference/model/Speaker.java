@@ -7,6 +7,5 @@ public class Speaker {
 
 	@Getter @Setter private String firstName;
 	@Getter @Setter private String lastName;
-	
-	
+
 }
