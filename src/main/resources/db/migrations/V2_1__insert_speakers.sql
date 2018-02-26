@@ -1,19 +1,19 @@
 INSERT INTO public.speaker
-(firstname, lastname, bio, first_name, last_name)
-VALUES('Michelle', 'Morgan', NULL, NULL, NULL);
+(firstname, lastname)
+VALUES('Michelle', 'Morgan');
 
 INSERT INTO public.speaker
-(firstname, lastname, bio, first_name, last_name)
-VALUES('Rowan', 'Morgan', NULL, NULL, NULL);
+(firstname, lastname)
+VALUES('Rowan', 'Morgan');
 
 INSERT INTO public.speaker
-(firstname, lastname, bio, first_name, last_name)
-VALUES('Georgia', 'Morgan', NULL, NULL, NULL);
+(firstname, lastname)
+VALUES('Georgia', 'Morgan');
 
 INSERT INTO public.speaker
-(firstname, lastname, bio, first_name, last_name)
-VALUES('Aaron', 'Morgan', NULL, NULL, NULL);
+(firstname, lastname )
+VALUES('Aaron', 'Morgan');
 
 INSERT INTO public.speaker
-(firstname, lastname, bio, first_name, last_name)
-VALUES('Scott', 'Morgan', NULL, NULL, NULL);
+(firstname, lastname)
+VALUES('Scott', 'Morgan');
