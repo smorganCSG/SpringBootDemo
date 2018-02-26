@@ -19,8 +19,11 @@ node('maven') {
 	def newTag = "TestReady-${version}:${BUILD_NUMBER}"
 
 	stage('Flyway Migration') {
-		flywayrunner commandLineArgs: '', credentialsId: 'SampleDB', flywayCommand: 'baseline', installationName: 'flyway', locations: 'classpath:db/migrations', url: 'jdbc:mysql://mysql.srm-conference-services.svc:3306/sampledb'
+		def sqlFilesDir = "filesystem:${WORKSPACE}/src/main/resources/db/migrations"
+		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'repair', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
+		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'migrate', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
 	}
+
 
 	stage('Build war') {
 		echo "Building version ${version}"
@@ -44,12 +47,6 @@ node('maven') {
 	//     echo "Publishing to Nexus"
 	//     sh "${mvnCmd} deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::http://nexus3.srm-nexus.svc.cluster.local:8081/repository/releases"
 	//   }
-
-	stage('Flyway Migration') {
-		def sqlFilesDir = "filesystem:${WORKSPACE}/src/main/resources/db/migrations"
-		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'SampleDB', flywayCommand: 'repair', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
-		//  	flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'SampleDB', flywayCommand: 'migrate', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:mysql://mysql.srm-conference-services.svc:3306/sampledb'
-	}
 
 	stage('Build OpenShift Image') {
 		echo "New Tag: ${newTag}"
