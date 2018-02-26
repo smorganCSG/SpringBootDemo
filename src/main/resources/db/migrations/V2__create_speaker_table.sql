@@ -8,9 +8,5 @@ create table speaker
   bio varchar(255)
 );
 
-insert into speaker (firstname, lastname) values ('Michelle', 'Morgan');
-insert into speaker (firstname, lastname) values ('Scott', 'Morgan');
-insert into speaker (firstname, lastname) values ('Rowan', 'Morgan');
-insert into speaker (firstname, lastname) values ('Georgia', 'Morgan');
-insert into speaker (firstname, lastname) values ('Aaron', 'Morgan');
+
 
