@@ -20,7 +20,7 @@ node('maven') {
 
 	stage('Flyway Migration') {
 		def sqlFilesDir = "filesystem:${WORKSPACE}/src/main/resources/db/migrations"
-		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'repair', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
+		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'reset', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
 		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'migrate', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
 	}
 
