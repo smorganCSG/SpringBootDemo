@@ -18,11 +18,11 @@ node('maven') {
 	def version    = getVersionFromPom("pom.xml")
 	def newTag = "TestReady-${version}:${BUILD_NUMBER}"
 
-	stage('Flyway Migration') {
-		def sqlFilesDir = "filesystem:${WORKSPACE}/src/main/resources/db/migrations"
-		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'clean', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
-		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'migrate', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
-	}
+//	stage('Flyway Migration') {
+//		def sqlFilesDir = "filesystem:${WORKSPACE}/src/main/resources/db/migrations"
+//		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'clean', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
+//		flywayrunner commandLineArgs: '-baselineOnMigrate=true', credentialsId: 'ConferenceDB', flywayCommand: 'migrate', installationName: 'flyway', locations: sqlFilesDir, url: 'jdbc:postgresql://postgresql.srm-conference-services.svc/conferencedb'
+//	}
 
 
 	stage('Build war') {
