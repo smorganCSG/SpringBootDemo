@@ -4,7 +4,7 @@ node('maven') {
 
 	def ocdevnamespace = "srm-conference-services"
 	def ocprodnamespace = "srm-parks-prod"
-	def appname = "speakers";
+	def appname = "conference";
 
 	def mvnCmd = "mvn "
 
