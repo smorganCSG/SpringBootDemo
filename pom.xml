@@ -79,6 +79,7 @@
 				<configuration>
 					<driver>org.postgresql.Driver</driver>
 					<url>jdbc:postgresql://localhost/postgres</url>
+					<password>scott</password>
 					<locations>
 						<location>filesystem:src/main/resources/db/migrations</location>
 					</locations>

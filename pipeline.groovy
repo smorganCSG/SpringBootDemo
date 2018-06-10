@@ -2,9 +2,9 @@
 
 node('maven') {
 
-	def ocdevnamespace = "srm-conference-services"
+	def ocdevnamespace = "ln-services"
 	def ocprodnamespace = "srm-parks-prod"
-	def appname = "conference";
+	def appname = "spring-boot-demo";
 
 	def mvnCmd = "mvn "
 

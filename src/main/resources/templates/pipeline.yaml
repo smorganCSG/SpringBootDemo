@@ -3,19 +3,23 @@ kind: BuildConfig
 metadata:
   creationTimestamp: null
   labels:
-    app: testpipeline
-    name: testpipeline
-  name: testpipeline
+    app: conferencepipeline
+    name: conferencepipeline
+  name: conferencepipeline
 spec:
   output: {}
   postCommit: {}
   resources: {}
   runPolicy: Serial
   source:
-    type: None
+    type: Git
+    git:
+      uri: https://smorgan@gitlab.cardinalsolutions.com/smorgan/ConferenceSpeakers.git
+      ref: master
+    sourceSecret: gitlabcreds
   strategy:
     jenkinsPipelineStrategy:
-      jenkinsfile: "node('maven'){ }"
+      jenkinsfile: pipeline.groovy
     type: JenkinsPipeline
   triggers:
   - github:
