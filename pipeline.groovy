@@ -61,7 +61,6 @@ node('maven') {
 
 		openshiftDeploy depCfg: appname, namespace: ocdevnamespace, verbose: 'false', waitTime: '', waitUnit: 'sec'
 		openshiftVerifyDeployment depCfg: appname, namespace: ocdevnamespace, replicaCount: '1', verbose: 'false', verifyReplicaCount: 'false', waitTime: '', waitUnit: 'sec'
-		openshiftVerifyService namespace: ocdevnamespace, svcName: appname, verbose: 'false'
 	}
 
 	//   newTag = "ProdReady-${version}:${BUILD_NUMBER}"
