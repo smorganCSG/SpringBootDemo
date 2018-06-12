@@ -2,7 +2,7 @@
 
 node('maven') {
 
-	def ocdevnamespace = "ln-services"
+	def ocdevnamespace = "lexis-conference-services"
 	def ocprodnamespace = "srm-parks-prod"
 	def appname = "spring-boot-demo";
 
@@ -59,7 +59,7 @@ node('maven') {
 		sh "oc project ${ocdevnamespace}"
 		sh "oc patch dc ${appname} --patch '{\"spec\": { \"triggers\": [ { \"type\": \"ImageChange\", \"imageChangeParams\": { \"containerNames\": [ \"${appname}\" ], \"from\": { \"kind\": \"ImageStreamTag\", \"namespace\": \"${ocdevnamespace}\", \"name\": \"$appname:$newTag\"}}}]}}' -n ${ocdevnamespace}"
 
-		openshiftDeploy depCfg: appname, namespace: ocdevnamespace, verbose: 'true', waitTime: '', waitUnit: 'sec'
+		openshiftDeploy depCfg: appname, namespace: ocdevnamespace, verbose: 'false', waitTime: '', waitUnit: 'sec'
 		openshiftVerifyDeployment depCfg: appname, namespace: ocdevnamespace, replicaCount: '1', verbose: 'false', verifyReplicaCount: 'false', waitTime: '', waitUnit: 'sec'
 		openshiftVerifyService namespace: ocdevnamespace, svcName: appname, verbose: 'false'
 	}

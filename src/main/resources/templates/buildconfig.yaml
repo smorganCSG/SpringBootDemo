@@ -22,6 +22,9 @@ spec:
     type: Binary
   strategy:
     sourceStrategy:
+      env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "container"
       from:
         kind: ImageStreamTag
         name: redhat-openjdk18-openshift:1.2

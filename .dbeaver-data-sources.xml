@@ -16,7 +16,7 @@
 		</connection>
 	</data-source>
 	<data-source id="postgres-jdbc-163ea2b7bd0-2d18875494da4181" provider="postgresql" driver="postgres-jdbc" name="ConferenceDB - OpenShift" save-password="true" show-system-objects="true" read-only="false">
-		<connection host="localhost" port="15432" server="" database="sampledb" url="jdbc:postgresql://localhost:15432/sampledb" user="userYDA" password="I1AJM2QUERs8FTAoE0dxW0b2" type="dev">
+		<connection host="localhost" port="15432" server="" database="sampledb" url="jdbc:postgresql://localhost:15432/sampledb" user="user0U6" password="FFMWJRZPFwMJNBcpRCBrZkb2" type="dev">
 			<provider-property name="@dbeaver-show-non-default-db@" value="false"/>
 			<provider-property name="@dbeaver-switch-db-on-expand@" value="false"/>
 			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="false">
