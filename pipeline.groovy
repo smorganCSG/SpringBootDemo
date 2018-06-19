@@ -2,7 +2,8 @@
 
 node('maven') {
 
-	def ocdevnamespace = "lexis-conference-services"
+	def ocdevnamespace = "lexis-nexis-services"
+	
 	def ocprodnamespace = "srm-parks-prod"
 	def appname = "spring-boot-demo";
 
