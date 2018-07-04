@@ -78,7 +78,7 @@
 				<version>5.0.7</version>
 				<configuration>
 					<driver>org.postgresql.Driver</driver>
-					<url>jdbc:postgresql://localhost/postgres</url>
+					<url>jdbc:postgresql://localhost/conferencedb</url>
 					<password>scott</password>
 					<locations>
 						<location>filesystem:src/main/resources/db/migrations</location>

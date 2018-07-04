@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data-sources>
 	<data-source id="postgres-jdbc-161a0255e80-443bb73fc737427a" provider="postgresql" driver="postgres-jdbc" name="ConferenceDB - Local" save-password="true" show-system-objects="true" read-only="false">
-		<connection host="localhost" port="5432" server="" database="postgres" url="jdbc:postgresql://localhost:5432/postgres" user="postgres" password="AAcJNFUjpQ==" type="dev">
+		<connection host="localhost" port="5432" server="" database="conferencedb" url="jdbc:postgresql://localhost:5432/conferencedb" user="postgresuser" password="AAcJNFUjpQ==" type="dev">
+			<property name="connectTimeout" value="20"/>
+			<property name="loginTimeout" value="20"/>
 			<provider-property name="@dbeaver-show-non-default-db@" value="false"/>
 			<provider-property name="@dbeaver-switch-db-on-expand@" value="false"/>
 			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="false">
@@ -16,13 +18,13 @@
 		</connection>
 	</data-source>
 	<data-source id="postgres-jdbc-163ea2b7bd0-2d18875494da4181" provider="postgresql" driver="postgres-jdbc" name="ConferenceDB - OpenShift" save-password="true" show-system-objects="true" read-only="false">
-		<connection host="localhost" port="15432" server="" database="sampledb" url="jdbc:postgresql://localhost:15432/sampledb" user="user0U6" password="FFMWJRZPFwMJNBcpRCBrZkb2" type="dev">
+		<connection host="node-demo-node-test-db.127.0.0.1.nip.io" port="5432" server="" database="conferencedb" url="jdbc:postgresql://node-demo-node-test-db.127.0.0.1.nip.io:5432/conferencedb" user="postgresuser" password="AAcJNFUjpQ==" type="dev">
 			<provider-property name="@dbeaver-show-non-default-db@" value="false"/>
 			<provider-property name="@dbeaver-switch-db-on-expand@" value="false"/>
 			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="false">
 				<property name="sshConnectTimeout" value="10000"/>
-				<property name="authType" value="PASSWORD"/>
 				<property name="port" value="22"/>
+				<property name="authType" value="PASSWORD"/>
 			</network-handler>
 			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="false">
 				<property name="socks-port" value="1080"/>

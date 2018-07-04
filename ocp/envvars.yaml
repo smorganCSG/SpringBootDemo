@@ -1,0 +1,15 @@
+oc:
+  profile: dev
+  env:
+    - name: DATABASE_HOST
+      value: myserverdev
+    - name: DATABASE_USER
+      value: postgresuserdev
+oc:
+  profile: qat        
+  env:
+    - name: DATABASE_HOST
+      value: myserverqat
+    - name: DATABASE_USER
+      value: postgresuser
+        
