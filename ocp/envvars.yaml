@@ -1,15 +1,15 @@
 oc:
-  profile: dev
-  env:
-    - name: DATABASE_HOST
-      value: myserverdev
-    - name: DATABASE_USER
-      value: postgresuserdev
-oc:
-  profile: qat        
-  env:
-    - name: DATABASE_HOST
-      value: myserverqat
-    - name: DATABASE_USER
-      value: postgresuser
+  environments:
+    - name: dev
+      vars:
+      - name: DATABASE_HOST
+        value: myserverdev
+      - name: DATABASE_USER
+        value: postgresuserdev
+    - name: qat        
+      var: 
+      - name: DATABASE_HOST
+        value: myserverqat
+      - name: DATABASE_USER
+        value: postgresuser
         
