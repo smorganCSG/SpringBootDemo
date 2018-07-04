@@ -6,10 +6,12 @@ oc:
         value: myserverdev
       - name: DATABASE_USER
         value: postgresuserdev
-    - name: qat        
-      var: 
-      - name: DATABASE_HOST
-        value: myserverqat
-      - name: DATABASE_USER
-        value: postgresuser
+---
+oc:
+  profile: qat        
+  env:
+    - name: DATABASE_HOST
+      value: myserverqat
+    - name: DATABASE_USER
+      value: postgresuser
         
