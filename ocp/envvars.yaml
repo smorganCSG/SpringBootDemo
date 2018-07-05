@@ -2,6 +2,8 @@ oc:
   environment: dev
   spring-profile: container
   vars:
+    - name: DATABASE_NAME
+      value: conferencedb
     - name: DATABASE_HOST
       value: myserverdev
     - name: DATABASE_USER
@@ -15,6 +17,8 @@ oc:
   vars:
     - name: DATABASE_HOST
       value: myserverqat
+    - name: DATABASE_NAME
+      value: conferencedb
     - name: DATABASE_USER
       value: postgresuserqat      
     - name: DATABASE_PASSWORD
