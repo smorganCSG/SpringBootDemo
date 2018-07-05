@@ -9,7 +9,7 @@ oc:
     - name: DATABASE_USER
       value: postgresuserdev
     - name: DATABASE_PASSWORD
-      secret: scott       
+      secret-value: scott       
 ---
 oc:
   environment: qat
@@ -22,5 +22,5 @@ oc:
     - name: DATABASE_USER
       value: postgresuserqat      
     - name: DATABASE_PASSWORD
-      secret: morgan
+      secret-value: morgan
  
