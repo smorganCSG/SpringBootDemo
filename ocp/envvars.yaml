@@ -1,15 +1,22 @@
 oc:
   environment: dev
+  spring-profile: container
   vars:
     - name: DATABASE_HOST
       value: myserverdev
     - name: DATABASE_USER
       value: postgresuserdev
+    - name: DATABASE_PASSWORD
+      secret: scott       
 ---
 oc:
   environment: qat
+  spring-profile: container
   vars:
     - name: DATABASE_HOST
       value: myserverqat
     - name: DATABASE_USER
       value: postgresuserqat      
+    - name: DATABASE_PASSWORD
+      secret: morgan
+ 
