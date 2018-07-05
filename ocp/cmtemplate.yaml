@@ -1,0 +1,5 @@
+            - name: ${OC_ENV_NAME}
+              valueFrom: 
+                configMapKeyRef:
+                  name: ${OC_CM_NAME}
+                  key: ${OC_CM_KEY}
