@@ -16,11 +16,11 @@ oc:
   springprofile: container
   vars:
     - name: DATABASE_HOST
-      value: myserverqat
+      value: postgresql.myproject.svc
     - name: DATABASE_NAME
       value: conferencedb
     - name: DATABASE_USER
-      value: postgresuserqat      
+      value: postgresuser      
     - name: DATABASE_PASSWORD
-      secretvalue: morgan
+      secretvalue: scott
  
